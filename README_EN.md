@@ -1,12 +1,28 @@
 # Kunka Screenwriting Master
 
-Chinese-first screenwriting skills for Codex and Claude Code. [中文说明](README.md)
+Chinese-first screenwriting skills for Codex and Claude Code.
 
-Thirteen focused skills help develop premises, structure stories, write scenes and dialogue, revise drafts, check continuity, plan series, adapt material, prepare screenplay text, and write pitches. The package contains instructions and tools; your AI assistant performs the writing.
+[中文](README.md) · [Example](examples/dialogue-workshop.md) · [Installation guide](docs/installation.md) · [MIT License](LICENSE)
+
+**From a story idea to a complete screenplay.**
+
+Thirteen focused skills help develop premises, shape characters, write scenes and dialogue, revise drafts, and plan series. Describe your project in natural language and work with the model configured in your AI client.
+
+## What you can create
+
+| Starting point | Task | Output |
+| --- | --- | --- |
+| An idea, image, or character | Explore the central conflict | Story options and a logline |
+| A chosen premise | Develop structure and relationships | Outline, characters, and a draft |
+| A scene that needs work | Revise actions and dialogue | Replacement scene text |
+| A complete draft | Check motivation, causality, and continuity | Located findings and revisions |
+| An ongoing series | Connect episode stories and character changes | Episode outlines and project notes |
+
+Develop your project in stages or ask for a complete draft directly. Specify the format, length, relationships, and ending you want to preserve.
 
 ## Install in Codex
 
-Requires Git and Python 3.9+. No third-party Python packages are needed for installation.
+Requires Git and Python 3.9+. Installation uses the Python standard library.
 
 ```bash
 git clone https://github.com/geslie1/kunka-screenwriting-master.git
@@ -17,12 +33,6 @@ python3 scripts/install.py
 
 The destination is `$CODEX_HOME/skills`, or `~/.codex/skills` by default. Use the skills on the next turn in clients with dynamic discovery; reopen the conversation if needed.
 
-```text
-Use $kunka-screenwriter to develop a ten-minute mystery with two actors and one main location.
-Use $kunka-dialogue to revise this dialogue while preserving the final line.
-Use $kunka-continuity to check who knows what in these scenes.
-```
-
 ## Install in Claude Code
 
 ```text
@@ -30,34 +40,93 @@ Use $kunka-continuity to check who knows what in these scenes.
 /plugin install kunka-screenwriting@kunka-screenwriting-master
 ```
 
-Start with `/kunka-screenwriting:kunka-screenwriter`, or describe the relevant writing task. Skill bodies are written in Chinese; descriptions include English routing terms.
+Start with `/kunka-screenwriting:kunka-screenwriter`, or describe a writing task. Skill bodies are written in Chinese; descriptions include English routing terms.
 
-## Design
+## Try these prompts
 
-The entrypoint routes only to relevant skills. Small edits do not require a full project workflow. Creative conventions remain choices rather than mandatory beat counts or page percentages. Ongoing work distinguishes confirmed facts from proposed changes in a compact project record.
+**Write a short film**
 
-Dedicated revision and continuity skills require text evidence and distinguish confirmed contradictions from missing context. Format guidance delivers actual source files and does not claim PDF or FDX export without a real converter.
+```text
+Use $kunka-screenwriter to write a ten-minute mystery set in a late-night convenience store.
+Use three main characters. Plant clues for the final twist. Deliver a complete first draft.
+```
 
-See the [skill catalog](README.md), [original example](examples/dialogue-workshop.md), and [design review](docs/design-review.md). Reduced instruction size is an engineering result, not a measured improvement in writing quality.
+**Revise an existing draft**
 
-## Updates and validation
+```text
+Use $kunka-revision to revise this screenplay.
+Preserve the relationships and ending. Fix motivation and causality before polishing dialogue.
+Provide the revised text and a short explanation of the changes.
+```
+
+**Resume a project**
+
+```text
+Use $kunka-screenwriter to read this project's story-bible.md and continue scene three.
+Keep the confirmed setting and ending.
+```
+
+For a concrete example, read the [dialogue workshop](examples/dialogue-workshop.md).
+
+## Skill catalog
+
+| Skill | Focus |
+| --- | --- |
+| `kunka-screenwriter` | Start or resume a project and select the next task |
+| `kunka-premise` | Premises, themes, and loglines |
+| `kunka-structure` | Outlines, causality, and narrative order |
+| `kunka-character` | Motivation, relationships, and character choices |
+| `kunka-scene` | Scene writing, action, and pacing |
+| `kunka-dialogue` | Dialogue, subtext, and distinct voices |
+| `kunka-revision` | Evidence-based review and revision |
+| `kunka-continuity` | Timelines, props, and character knowledge |
+| `kunka-series` | Episode plans and continuing arcs |
+| `kunka-adaptation` | Adaptation choices and changes of medium |
+| `kunka-format` | Chinese screenplay text and Fountain |
+| `kunka-pitch` | Loglines, synopses, and project pitches |
+| `kunka-style-lab` | Compare narrative approaches using original scenes |
+
+## How it works
+
+- Load the skills relevant to the current task.
+- Adapt the approach to the author's chosen form and constraints.
+- Keep confirmed decisions separate from proposed changes.
+- Locate revision findings in the actual text.
+- Deliver editable screenplay text for continued writing and formatting.
+
+For ongoing projects, the [story-bible template](plugins/kunka-screenwriting/skills/kunka-screenwriter/assets/story-bible.md) records decisions, draft locations, and the next step.
+
+## Update
 
 ```bash
 git pull --ff-only
 python3 scripts/install.py --update --dry-run
 python3 scripts/install.py --update
+```
+
+Identical files are skipped; updates back up differing installed skills. See the [installation guide](docs/installation.md) for custom destinations, selective installation, restoration, and removal.
+
+## FAQ
+
+**Does the package need an API key?** It uses your client's configured model service. The package requires no separate API key; usage costs and limits depend on the client.
+
+**Can I revise just one passage?** Yes. Specify the passage and what must stay unchanged, or use `kunka-dialogue` directly.
+
+**Can it export PDF?** The skills prepare screenplay text or Fountain source. PDF and FDX output require a real converter in your environment; no renderer is bundled.
+
+**How does project memory work?** The assistant reads and updates a local `story-bible.md`. This editable record needs to stay consistent with the screenplay.
+
+## Development
+
+```bash
 python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
 ```
 
-Identical installations are skipped. Differing files require `--update`, which saves originals in a timestamped sibling backup directory outside skill discovery. The installer prints its exact location. To restore, move the current selected skill outside the discovery directory, then move the saved directory back. To uninstall, remove only this package's installed `kunka-*` directories.
+CI checks metadata, links, packaging, and installation behavior. See [design and maintenance](docs/design-review.md) and the [manual behavioral cases](tests/behavioral-cases.md). Writing quality should be evaluated against actual drafts.
 
-Normal installation exceptions trigger rollback. Power loss or forced termination may require manual recovery. Check any existing installer lock before removing it. Original `sw-*` installations are not modified.
+## License and contributions
 
-CI validates packaging and isolated installation. [Behavioral cases](tests/behavioral-cases.md) are manual acceptance scenarios, not an automated model benchmark. No renderer, model runtime, or third-party corpus is bundled.
+The skills, templates, examples, and code are available under the [MIT License](LICENSE).
 
-## Attribution and license
-
-Inspired by [jtydhr88/screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills). This is a newly authored implementation with a different task-oriented module layout, not a relicensing of that project's materials. It excludes its skill bodies, translated excerpts and work-specific analysis tables. See [NOTICE](NOTICE.md).
-
-Newly written code, instructions, templates and examples are released under the [MIT License](LICENSE). Linked third-party works retain their own rights. Contributions should include a concrete use case and validation; do not submit third-party excerpts without redistribution rights.
+Issues and pull requests are welcome. Include a concrete writing task, observed behavior, and expected result. Contribute examples you wrote or have permission to redistribute.
