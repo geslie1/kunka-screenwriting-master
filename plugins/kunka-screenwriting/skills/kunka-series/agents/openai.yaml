@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 剧集开发"
+  short_description: "规划短剧、连续剧与单元剧，在分集兑现和跨集人物变化之间建立联系。"
+  default_prompt: "使用 $kunka-series，规划六集短剧的分集大纲，每集五分钟、两个主要场地。"

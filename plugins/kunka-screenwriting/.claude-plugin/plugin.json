@@ -1,0 +1,10 @@
+{
+  "name": "kunka-screenwriting",
+  "version": "1.0.0",
+  "description": "昆卡编剧大师 / Kunka Screenwriting Master: 13 Chinese-first screenwriting skills.",
+  "author": { "name": "geslie1" },
+  "homepage": "https://github.com/geslie1/kunka-screenwriting-master",
+  "repository": "https://github.com/geslie1/kunka-screenwriting-master",
+  "license": "MIT",
+  "keywords": ["screenwriting", "dramaturgy", "chinese", "skills", "codex"]
+}

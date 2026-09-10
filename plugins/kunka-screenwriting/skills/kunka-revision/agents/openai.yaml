@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 剧本修订"
+  short_description: "按文本证据定位改稿问题，区分剧情矛盾和风格建议并完成局部修复。"
+  default_prompt: "使用 $kunka-revision，审读这份初稿，优先修复影响故事成立的问题。"

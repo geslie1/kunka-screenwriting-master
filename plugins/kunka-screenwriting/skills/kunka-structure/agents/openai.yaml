@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 故事结构"
+  short_description: "整理因果、转折与观众知情顺序，按作品形式诊断大纲的结构断点。"
+  default_prompt: "使用 $kunka-structure，检查我的大纲因果是否连贯，保留开放结局。"

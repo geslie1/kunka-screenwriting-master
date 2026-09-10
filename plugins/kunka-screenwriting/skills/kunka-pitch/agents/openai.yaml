@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 项目提案"
+  short_description: "根据真实稿件撰写一句话简介、完整梗概与项目说明，区分专业和观众用途。"
+  default_prompt: "使用 $kunka-pitch，为这份剧本写一句话简介和包含结局的一页梗概。"

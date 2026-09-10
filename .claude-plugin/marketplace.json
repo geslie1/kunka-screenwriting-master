@@ -1,0 +1,12 @@
+{
+  "name": "kunka-screenwriting-master",
+  "owner": { "name": "geslie1" },
+  "metadata": { "description": "昆卡编剧大师：用于中文剧本创作、修订和交付的 AI 技能。" },
+  "plugins": [
+    {
+      "name": "kunka-screenwriting",
+      "source": "./plugins/kunka-screenwriting",
+      "description": "昆卡编剧大师：中文剧本开发、改稿与连续性检查的 13 个技能。"
+    }
+  ]
+}

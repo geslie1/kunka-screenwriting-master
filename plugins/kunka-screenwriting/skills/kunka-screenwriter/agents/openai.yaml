@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡编剧大师"
+  short_description: "从故事点子到可写剧本，按当前目标安排工作并保存已确认的创作设定。"
+  default_prompt: "使用 $kunka-screenwriter，帮我开发一个十分钟的悬疑短片，先给两个故事方向。"

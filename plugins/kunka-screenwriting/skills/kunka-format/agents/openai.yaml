@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 剧本格式"
+  short_description: "整理中文场号文本与 Fountain 源文件，核对格式并如实说明导出能力。"
+  default_prompt: "使用 $kunka-format，把这段剧本转换为中文 Fountain 文件，保持剧情不变。"

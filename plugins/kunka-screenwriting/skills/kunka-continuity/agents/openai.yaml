@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 连续性检查"
+  short_description: "追踪人物知情、时间顺序与道具流转，用两端文本证据核对连续性。"
+  default_prompt: "使用 $kunka-continuity，检查这些场次的人物知情和钥匙交接，缺少前情时标待确认。"

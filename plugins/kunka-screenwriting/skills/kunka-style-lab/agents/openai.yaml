@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 风格实验室"
+  short_description: "固定故事事实比较不同叙事手法，用原创场景探索语气、留白与信息顺序。"
+  default_prompt: "使用 $kunka-style-lab，把同一场重逢分别写成观察式和悬疑式，人物关系与结局不变。"

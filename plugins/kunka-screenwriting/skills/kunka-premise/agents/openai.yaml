@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 故事构思"
+  short_description: "把零散素材转为人物处境、核心冲突和一句话故事，检验篇幅与发展空间。"
+  default_prompt: "使用 $kunka-premise，把“修理旧录音机的人”发展成一个可拍摄的短片点子。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 场景创作"
+  short_description: "写出可直接使用的单场戏，用动作、空间和信息变化调整场景节奏。"
+  default_prompt: "使用 $kunka-scene，写一场修理铺打烊时有人送来无标签磁带的戏。"

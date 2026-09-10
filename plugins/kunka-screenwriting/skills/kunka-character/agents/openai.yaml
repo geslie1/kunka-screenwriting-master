@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 人物关系"
+  short_description: "从行动与处境设计人物动机、关系筹码和变化轨迹，修复不可信的选择。"
+  default_prompt: "使用 $kunka-character，检查主角在第三场离家的动机，保留既定结局。"

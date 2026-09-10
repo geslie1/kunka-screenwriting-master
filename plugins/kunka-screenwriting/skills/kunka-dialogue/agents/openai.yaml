@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 对白润色"
+  short_description: "保留原稿剧情与人物关系，改善潜台词、说话策略和不同角色的声音。"
+  default_prompt: "使用 $kunka-dialogue，润色这段对白，保留所有剧情信息和最后一句。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "昆卡 · 改编设计"
+  short_description: "将已有素材转换为影视或舞台叙事，明确视角取舍、新增设计和事实来源。"
+  default_prompt: "使用 $kunka-adaptation，根据这篇故事设计短片改编方案，保留母女关系与结尾。"
